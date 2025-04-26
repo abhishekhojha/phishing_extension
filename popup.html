@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Detector</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add in <head> -->
+    <script src="./alert.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f4f6;
+        width: 400px;
+        height: 380px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        padding: 1.5rem;
+        margin: 1rem;
+        width: 100%;
+      }
+
+      .title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        text-align: center;
+        color: #111827;
+      }
+
+      .field {
+        font-size: 0.875rem;
+        color: #4b5563;
+        margin-bottom: 0.5rem;
+      }
+
+      .url-box {
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+        word-break: break-word;
+        color: #1f2937;
+      }
+
+      .btn {
+        width: 100%;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        margin-top: 1rem;
+      }
+
+      .btn:hover {
+        background-color: #1e3a8a;
+      }
+
+      .result {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .safe {
+        color: #16a34a;
+      }
+
+      .phishing {
+        color: #dc2626;
+      }
+
+      .loader {
+        text-align: center;
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body style="height: 380px !important;">
+    <div class="container">
+      <div class="title">🔍 Phishing URL Detector</div>
+      <div class="field">Current URL:</div>
+      <div class="url-box" id="url">Loading...</div>
+      <button type="button" class="btn" id="copyRuntimeId">
+        Copy Runtime ID
+      </button>
+      <div class="result" id="result"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
