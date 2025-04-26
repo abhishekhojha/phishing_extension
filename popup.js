@@ -52,6 +52,10 @@ const checkUrl = (url) => {
           })
             .then((res) => res.json())
             .then(() => {
+              localStorage.setItem(currentUrl, "Safe");
+              resultBox.textContent = "✅ Safe";
+              resultBox.className = `result Safe`;
+
               Swal.fire("Marked", "This URL is marked as safe", "success");
             })
             .catch(() => {
@@ -75,6 +79,9 @@ const checkUrl = (url) => {
           })
             .then((res) => res.json())
             .then(() => {
+              localStorage.setItem(currentUrl, "phishing");
+              resultBox.textContent = "⚠️ Risky";
+              resultBox.className = `result phishing`;
               Swal.fire("Marked", "This URL is marked as Spam", "success");
             })
             .catch(() => {
